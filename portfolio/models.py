@@ -13,4 +13,17 @@ class Profile(models.Model):
     def __str__(self):
         return self.fullname
     
+class Skills(models.Model):
+    name=models.CharField(max_length=100)
+    proficiency=models.IntegerField(default=80)
     
+    def __str__(self):
+        return self.name   
+    
+class Project(models.Model):
+    title=models.CharField(max_length=100)
+    description=models.TextField(max_length=200)
+    image=models.ImageField()
+    github_link=models.URLField()
+    live_demo=models.URLField()
+    technology=models.CharField(max_length=255)    
