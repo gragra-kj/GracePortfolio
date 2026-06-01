@@ -121,11 +121,21 @@
 
 //
 //import React from "react";
-
+import React,{useEffect} from "react";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import Header from "./components/Header";
 const App = () => {
+  useEffect(()=>{
+    Aos.init({
+      duration: 1000,
+      once: false,
+      offset:100,
+    })
+  })
   return (
-    <div>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <div className="bg-[#111827] min-h-screen">
+      <Header/>
     </div>
   );
 };
