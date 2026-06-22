@@ -1,4 +1,7 @@
 import React from 'react'
+import AOS from "aos";
+import "aos/dist/aos.css";
+import {GraduationCap,Calendar,CheckCircle} from "lucide-react"
 import educ from '../assets/education.jpeg'
 const Education = () => {
     const educationData=[
@@ -6,14 +9,14 @@ const Education = () => {
             id:1,
             degree:'Bachelors of Computer Science',
             institution:'Catholic University of Eastern Africa',
-            duratio:'2019-2023',
+            duration:'2019-2023',
             details:'Second Class Honors, Lower Divison'
         },
         {
             id:2,
             degree:'Bachelors of Computer Science',
             institution:'Catholic University of Eastern Africa',
-            duratio:'2019-2023',
+            duration:'2019-2023',
             details:'Second Class Honors, Lower Divison'
         }
     ]
@@ -47,7 +50,56 @@ const Education = () => {
                 </div>
 
             </div>
-            <div className='w-full lg:w-7/12'>
+            <div className='w-full lg:w-7/12 space-y-6' data-aos='fade-left'>
+                {educationData.map((edu)=>(
+                    <div key={edu.id} className='group relative p-6 rounded-2xl
+                    bg-[#111a3e] border border-[#1f1641]
+                    transition-all duration-300 hover:border-primary/50'>
+
+                        <div className='flex flex-col sm:flex-row
+                        sm:items-center justify-between gap-4 mb-4'>
+                            <div className='flex items-center gap-3'>
+                                <div className='p-2 bg-[#050816]
+                                rounded-lg border border-primary/20
+                                group-hover:border-primary
+                                transition-colors'>
+                                    <GraduationCap className='text-primary' size={24}/>
+
+                                </div>
+                                <div>
+                                    <h3 className='text-lg font-bold text-white
+                                    group-hover:text-primary transition-colors'>
+                                        {edu.degree}
+                                    </h3>
+                                    <p className='text-gray-400 text-sm'>
+                                        {edu.institution}
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div className='flex items-center gap-2 text-xs font-medium
+                            bg-[#050816] px-3 py-1 rounded-full border border-gray-700
+                            w-fit'>
+                                <Calendar size={12} className='text-primary'/>
+                                {edu.duration}
+
+
+                            </div>
+
+                        </div>
+                        <p className='text-gray-400 text-sm leading-relaxed mb-4'>
+                            {edu.details}
+                        </p>
+                        <div className='flex items-center gap-2 text-[10px]
+                        uppercase-wider text-primary font-bold'>
+                            <CheckCircle size={12}/>
+                            Academic Excellence
+
+                        </div>
+                    </div>
+                   
+                    
+                ))}
 
             </div>
         </div>
@@ -56,4 +108,4 @@ const Education = () => {
   )
 }
 
-export default Education
+export default Education;
