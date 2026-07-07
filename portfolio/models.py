@@ -34,12 +34,18 @@ class WorkExperience(models.Model):
         return f"{self.role} - {self.company}"    
     
 class Project(models.Model):
-    title=models.CharField(max_length=100)
-    description=models.TextField(max_length=200)
-    image=models.ImageField()
-    github_link=models.URLField()
-    live_demo=models.URLField()
-    technology=models.CharField(max_length=255) 
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to="projects/")
+    technology = models.CharField(max_length=255)
+
+    github_link = models.URLField(blank=True)
+    live_demo = models.URLField(blank=True)
+
+    featured = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title 
 
 class Education(models.Model):
     degree = models.CharField(max_length=150)
