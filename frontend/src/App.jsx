@@ -121,7 +121,7 @@
 
 //
 //import React from "react";
-import React,{useEffect} from "react";
+import {useEffect} from "react";
 import Aos from "aos";
 import 'aos/dist/aos.css'
 import Header from "./components/Header";
@@ -130,6 +130,7 @@ import Education from "./components/Education";
 import Certificate from "./components/Certificate";
 import AboutSection from "./components/AboutSection";
 import Experience from "./components/Experience";
+import Projects from "./components/Projects";
 const App = () => {
   useEffect(()=>{
     Aos.init({
@@ -146,6 +147,7 @@ const App = () => {
       <Certificate/>
       <AboutSection/>
       <Experience/>
+      <Projects/>
     
     </div>
   );
