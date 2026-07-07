@@ -1,5 +1,6 @@
-import React from 'react'
-import Aos from 'aos';
+// import React from 'react'
+// import Aos from 'aos';
+import "aos/dist/aos.css";
 import { Award ,ShieldCheck,Calendar, ExternalLink} from 'lucide-react';
 
 const Certificate = () => {
