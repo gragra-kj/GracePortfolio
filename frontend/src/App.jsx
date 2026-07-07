@@ -132,6 +132,7 @@ import AboutSection from "./components/AboutSection";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 const App = () => {
   useEffect(()=>{
     Aos.init({
@@ -150,6 +151,7 @@ const App = () => {
       <Experience/>
       <Projects/>
       <ContactSection/>
+      <Footer/>
     
     </div>
   );
