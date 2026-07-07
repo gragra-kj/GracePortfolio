@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import {Menu, X} from 'lucide-react'
 
 const Header = () => {
@@ -35,8 +35,8 @@ const Header = () => {
                         </li>
                     ))}
                 </ul>
-                <button onClick={()=>scrollToSection('#section')} className='bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-base font-semibold transition-all'>
-                    Contact Me
+                <button onClick={()=>scrollToSection('#contact')} className='bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-base font-semibold transition-all'>
+                    Contact
                 </button>
             </nav>
             {/*Mobile Menu */}

@@ -131,6 +131,7 @@ import Certificate from "./components/Certificate";
 import AboutSection from "./components/AboutSection";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import ContactSection from "./components/ContactSection";
 const App = () => {
   useEffect(()=>{
     Aos.init({
@@ -148,6 +149,7 @@ const App = () => {
       <AboutSection/>
       <Experience/>
       <Projects/>
+      <ContactSection/>
     
     </div>
   );

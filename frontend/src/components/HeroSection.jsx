@@ -1,4 +1,4 @@
-import React from 'react'
+//import React from 'react'
 import {Download} from "lucide-react"
 import hero from '../assets/hero2.jpeg'
 const HeroSection = () => {
