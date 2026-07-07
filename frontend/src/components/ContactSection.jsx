@@ -105,6 +105,23 @@ const ContactSection = () => {
             <form action="">
               <div className="mb-4">
                 <label
+                  htmlFor="name"
+                  className="text-white block mb-2 text-sm font-medium"
+                >
+                  Name
+                </label>
+
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg
+    text-white text-sm focus:outline-none focus:border-primary transition-colors"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label
                   htmlFor="Email"
                   className="
                     text-white block mb-2 text-sm font-medium"
