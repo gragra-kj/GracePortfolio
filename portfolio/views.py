@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 from rest_framework import viewsets
-from .serializer import ProfileSerializer,ProjectSerializer,SkillsSerializer,ExperienceSerialier,EducationSerializer
-from .models import Project,Profile,Skills,WorkExperience,Education
+from .serializer import ProfileSerializer,ProjectSerializer,SkillsSerializer,ExperienceSerialier,EducationSerializer,CertificateSerializer
+from .models import Project,Profile,Skills,WorkExperience,Education,Certificate
 
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset=Profile.objects.all()
@@ -22,4 +22,8 @@ class WorkExperienceViewSet(viewsets.ModelViewSet):
     serializer_class=ExperienceSerialier
 class EducationViewSet(viewsets.ModelViewSet):
     queryset = Education.objects.all()
-    serializer_class = EducationSerializer    
+    serializer_class = EducationSerializer 
+    
+class CertificateViewSet(viewsets.ModelViewSet):
+    queryset = Certificate.objects.all()
+    serializer_class = CertificateSerializer       

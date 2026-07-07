@@ -49,5 +49,15 @@ class Education(models.Model):
     details = models.TextField(blank=True)
 
     def __str__(self):
-        return f"{self.degree} - {self.institution}"    
+        return f"{self.degree} - {self.institution}"  
+    
+class Certificate(models.Model):
+    title = models.CharField(max_length=150)
+    issuer = models.CharField(max_length=150)
+    issue_date = models.DateField()
+    description = models.TextField(blank=True)
+    credential_url = models.URLField()
+
+    def __str__(self):
+        return self.title      
        
