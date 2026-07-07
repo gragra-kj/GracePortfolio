@@ -127,6 +127,7 @@ import 'aos/dist/aos.css'
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import Education from "./components/Education";
+import Certificate from "./components/Certificate";
 const App = () => {
   useEffect(()=>{
     Aos.init({
@@ -140,6 +141,8 @@ const App = () => {
       <Header/>
       <HeroSection/>
       <Education/>
+      <Certificate/>
+    
     </div>
   );
 };

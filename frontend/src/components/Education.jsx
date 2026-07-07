@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { GraduationCap, Calendar, CheckCircle } from "lucide-react";
-import educ from "../assets/ee.jpeg";
+import educ from "../assets/education.jpeg";
 
 const Education = () => {
   useEffect(() => {
