@@ -1,8 +1,10 @@
-import  { useEffect } from "react";
+import  { useEffect,useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { GraduationCap, Calendar, CheckCircle } from "lucide-react";
 import educ from "../assets/education.jpeg";
+import api from "../api/portfolioApi";
+
 
 const Education = () => {
   useEffect(() => {
@@ -12,22 +14,16 @@ const Education = () => {
     });
   }, []);
 
-  const educationData = [
-    {
-      id: 1,
-      degree: "Bachelors of Computer Science",
-      institution: "Catholic University of Eastern Africa",
-      duration: "2019-2023",
-      details: "Second Class Honors, Lower Division",
-    },
-    {
-      id: 2,
-      degree: "Bachelors of Computer Science",
-      institution: "Catholic University of Eastern Africa",
-      duration: "2019-2023",
-      details: "Second Class Honors, Lower Division",
-    },
-  ];
+const [educationData,setEducationData]=useState([]);
+useEffect(()=>{
+  const fetchEducation= async ()=>{
+    try{
+      const response=await api.get("education/");
+      setEducationData(response.data);
+      
+    }
+  }
+})
 
   return (
     <section className="text-white py-20 overflow-hidden" id="education">

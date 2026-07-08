@@ -1,7 +1,33 @@
-//import React from 'react'
+import {useEffect,useState} from 'react'
+import api from '../api/portfolioApi'
 import {Download} from "lucide-react"
-import hero from '../assets/hero2.jpeg'
+
+
+
 const HeroSection = () => {
+
+  const [profile,setProfile]=useState(null);
+
+ useEffect(() => {
+  const fetchProfile = async () => {
+    try {
+      const response = await api.get("profile/");
+      console.log("Response:", response);
+      console.log("Data:", response.data);
+
+      setProfile(response.data[0]);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  fetchProfile();
+}, []);
+  if(!profile){
+    return <div className='flex justify-center items-center h-screen text-white'>Loading....</div>
+  }
+
+
   return (
     <section className="relative w-full" data-aos="zoom-in-up">
       <div className="absolute top-0 inset-x-0 h-64 flex items-start">
@@ -22,7 +48,7 @@ const HeroSection = () => {
               >
                 Hey, I'm{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06a2c2] to-cyan-200">
-                  Grace
+                  {profile.fullname}
                 </span>
                 👋
               </h1>
@@ -31,15 +57,8 @@ const HeroSection = () => {
               className="text-gray-300 pt-8 text-center
             lg:text-left mx-auto max-w-xl"
             >
-                I am a Computer Science graduate and backend developer
-                passionate about building reliable, scalable, and efficient
-                server-side applications. I specialize in working with Django
-                and REST APIs to design and develop robust backend systems that
-                power modern web applications. I enjoy solving complex logic
-                problems, working with databases, and creating clean,
-                maintainable architectures. I am continuously improving my
-                skills in backend development and cloud technologies, with the
-                goal of becoming a strong backend engineer.
+              {profile.bio}
+
               
             </p>
             <div className='flex items-center gap-3 pt-9 
@@ -64,7 +83,7 @@ const HeroSection = () => {
                     <div className='download-loader text-white hidden'></div>
 
                   </div>
-                  <a href="/resume1.pdf" download="resume.pdf" className='pl-2 text-primary'>
+                  <a href={profile.resume} download="resume.pdf" className='pl-2 text-primary'>
                   Download Resume
                   
                   </a>
@@ -88,7 +107,7 @@ const HeroSection = () => {
               md:right-40 sm:right-16
               rounded-[30%_70%_70%_30%/30%_30%_70%_70%]
               shadow-lg border border-cyan-500'>
-                <img src={hero} alt="hero image"
+                <img src={profile.profile_image} alt={profile.fullname}
                 width="500"
                 height="auto"
                 loading='lazy'
