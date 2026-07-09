@@ -113,9 +113,9 @@ const Experience = () => {
                                   sm:items-center gap-2 sm:gap-4 mt-2 text-sm
                                   text-gray-400"
                       >
-                        <p className="mt-4 text-gray-400 leading-relaxed">
+                        {/* <p className="mt-4 text-gray-400 leading-relaxed">
                           {exp.description}
-                        </p>
+                        </p> */}
                         <span className="flex items-center gap-1.5">
                           <Building size={14} className="text-primary" />
                           {exp.company}
