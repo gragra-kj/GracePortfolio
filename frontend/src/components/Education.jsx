@@ -20,10 +20,13 @@ useEffect(()=>{
     try{
       const response=await api.get("education/");
       setEducationData(response.data);
-      
+
+    }catch(error){
+      console.error(error)
     }
-  }
-})
+  };
+  fetchEducation();
+},[]);
 
   return (
     <section className="text-white py-20 overflow-hidden" id="education">
@@ -83,7 +86,7 @@ useEffect(()=>{
 
                   <div className="flex items-center gap-2 text-xs font-medium bg-[#050816] px-3 py-1 rounded-full border border-gray-700 w-fit">
                     <Calendar size={12} className="text-primary" />
-                    {edu.duration}
+                    {edu.start_year} - {edu.end_year}
                   </div>
                 </div>
 

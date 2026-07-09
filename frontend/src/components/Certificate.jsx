@@ -1,28 +1,26 @@
 // import React from 'react'
 // import Aos from 'aos';
+import {useEffect,useState} from 'react'
 import "aos/dist/aos.css";
 import { Award ,ShieldCheck,Calendar, ExternalLink} from 'lucide-react';
+import api from '../api/portfolioApi';
 
 const Certificate = () => {
-    const certification=[
-        {
-            id:1,
-            title:"jjdjd",
-            issuer:'FfF',
-            date:'Dec',
-            link:'#',
-            desc:'nff',
-        },
-        {
-            id:2,
-            title:"jjdjd",
-            issuer:'FfF',
-            date:'Dec',
-            link:'#',
-            desc:'nff',
+  const [certification,setCertification]=useState([]);
+  useEffect(()=>{
+    const fetchCertificates=async()=>{
+        try {
+            const response=await api.get("certificates/");
+            setCertification(response.data);
+        }catch(error){
+            console.error(error)
         }
-    
-    ]
+    };
+    fetchCertificates();
+  })
+
+
+
   return (
     <section className="text-white py-20" id="certificate">
       <div className="max-w-7xl mx-auto lg:px-16">

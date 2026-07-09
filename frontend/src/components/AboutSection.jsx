@@ -1,5 +1,5 @@
 //import React from 'react'
-
+import { useEffect,useState } from "react";
 const AboutSection = () => {
   return (
     <section className="text-white mt-20 relative overflow-hidden" id="about">
