@@ -5,8 +5,37 @@ import {
   FaMapMarkedAlt,
   FaPhone,
 } from "react-icons/fa";
+import { useState } from "react";
+import api from "../api/portfolioApi";
 
 const ContactSection = () => {
+  const [formData,setFormData]=useState({
+    name:"",
+    email:"",
+    message:"",
+  });
+  const handleChange=(e)=>{
+    setFormData({
+      ...formData,
+      [e.target.name]:e.target.value,
+    })
+  };
+  const handleSubmit=async(e)=>{
+    e.preventDefault();
+    try{
+      await api.post("contact/contact/",formData);
+      alert("Message sent Successfully");
+      setFormData({
+        name:"",
+        email:"",
+        message:""
+      });
+    }catch(error){
+       console.error(error);
+       alert("Failed to send message")
+
+    }
+  }
   const contactInfo = [
     {
       id: 1,
@@ -52,7 +81,7 @@ const ContactSection = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <p className="text-gray-400 mb-8 leading-relaxed">
-              dhjssssssckkdddjdjdd ssjdjdjjdjdj
+              Lets connect 
             </p>
             <div className="space-y-6">
               {contactInfo.map((info) => {
@@ -102,7 +131,7 @@ const ContactSection = () => {
           </div>
           {/*Contact form */}
           <div className="mb-4">
-            <form action="">
+            <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label
                   htmlFor="name"
@@ -114,9 +143,14 @@ const ContactSection = () => {
                 <input
                   type="text"
                   id="name"
-                  className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg
-    text-white text-sm focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-4 py-2 bg-gray-700 
+                  border border-gray-600 rounded-lg
+                text-white text-sm focus:outline-none
+                 focus:border-primary transition-colors"
                   placeholder="Your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  name="name"
                   required
                 />
               </div>
@@ -136,6 +170,9 @@ const ContactSection = () => {
                     text-white text-sm focus:outline-none focus:border-primary
                     transition-colors"
                   placeholder="your@gmail.com"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -150,10 +187,13 @@ const ContactSection = () => {
                 <textarea
                   id="message"
                   className="w-full px-4 py-2 bg-gray-700
-                    border border-gray-600 rounded-lg
-                    text-white text-sm focus:outline-none focus:border-primary
-                    transition-colors"
+    border border-gray-600 rounded-lg
+    text-white text-sm focus:outline-none focus:border-primary
+    transition-colors"
                   placeholder="Your Message...."
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows="4"
                   required
                 />
