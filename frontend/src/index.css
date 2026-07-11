@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -15,5 +15,50 @@
 
   .bg-primary {
     background-color: var(--primary);
+  }
+} */
+ @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #6366f1;
+    --secondary: #8b5cf6;
+    --background: #0f172a;
+    --surface: #1e293b;
+    --card: #334155;
+  }
+
+  body {
+    background: var(--background);
+    color: #f8fafc;
+    font-family: Inter, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    color: var(--primary);
+  }
+
+  .bg-primary {
+    background-color: var(--primary);
+  }
+
+  .border-primary {
+    border-color: var(--primary);
+  }
+
+  .bg-surface {
+    background-color: var(--surface);
+  }
+
+  .bg-card {
+    background-color: var(--card);
   }
 }

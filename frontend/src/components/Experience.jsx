@@ -51,7 +51,7 @@ const Experience = () => {
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-3">
                         <div
-                          className="p-2 bg-[#111a3e] rounded-lg
+                          className="p-2 bg-surface rounded-lg
                                           group-hover:bg-primary transition-colors duration-300"
                         >
                           <SkillIcon
@@ -97,7 +97,7 @@ const Experience = () => {
                     {/* Icon */}
                     <div className="shrink-0">
                       <div
-                        className="p-3 bg-[#050816] rounded-xl border
+                        className="p-3 bg-background rounded-xl border
               border-gray-800 group-hover:border-primary transition-colors"
                       >
                         <Briefcase className="text-primary" size={24} />

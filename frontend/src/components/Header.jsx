@@ -22,7 +22,7 @@ const Header = () => {
     <header className='relative z-50 px-6 py-7'>
         <div className='max-rw-7x1 mx-auto flex justify-between items-center'>
             <div className='text-white text-3x1 font-black cursor-pointer'>
-                PORTFOLIO<span className='text-primary'>.</span>
+                Grace.dev<span className='text-primary'>.</span>
 
             </div>
             <nav className='hidden md:flex items-center gap-10'>
