@@ -82,49 +82,52 @@ const Experience = () => {
           </div>
           <div data-aos="fade-left">
             <h2 className="text-3xl md:text-5xl font-extrabold mb-12">
-              Work <span className="text-primary"> Experience</span>
+              Work <span className="text-primary">Experience</span>
             </h2>
+
             <div className="space-y-6">
               {experience.map((exp) => (
                 <div
                   key={exp.id}
                   className="group relative p-6 rounded-2xl
-                      bg-[#1f1641] hover:border-primary/50
-                      transition-all duration-300"
+        bg-[#1f1641] hover:border-primary/50
+        transition-all duration-300"
                 >
                   <div className="flex gap-4">
-                    <div className="shrink-0 mt-1">
+                    {/* Icon */}
+                    <div className="shrink-0">
                       <div
                         className="p-3 bg-[#050816] rounded-xl border
-                                  border-gray-800 group-hover:border-primary transition-colors"
+              border-gray-800 group-hover:border-primary transition-colors"
                       >
                         <Briefcase className="text-primary" size={24} />
                       </div>
                     </div>
-                    <div className="grow">
-                      <h3
-                        className="text-xl font-bold text-white
-                                  group-hover:text-primary transition-colors"
-                      >
+
+                    {/* Content */}
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
                         {exp.role}
                       </h3>
-                      <div
-                        className="flex flex-col sm:flex-row
-                                  sm:items-center gap-2 sm:gap-4 mt-2 text-sm
-                                  text-gray-400"
-                      >
-                        {/* <p className="mt-4 text-gray-400 leading-relaxed">
-                          {exp.description}
-                        </p> */}
-                        <span className="flex items-center gap-1.5">
-                          <Building size={14} className="text-primary" />
-                          {exp.company}
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                          <Calendar size={14} className="text-primary" />
-                          {exp.start_date} - {exp.end_date}
+
+                      {/* Company */}
+                      <div className="flex items-center gap-2 mt-2 text-gray-300">
+                        <Building size={16} className="text-primary" />
+                        <span>{exp.company}</span>
+                      </div>
+
+                      {/* Dates */}
+                      <div className="flex items-center gap-2 mt-2 text-gray-400 text-sm">
+                        <Calendar size={16} className="text-primary" />
+                        <span>
+                          {exp.start_date} - {exp.end_date || "Present"}
                         </span>
                       </div>
+
+                      {/* Description */}
+                      <p className="mt-4 text-gray-400 leading-relaxed">
+                        {exp.description}
+                      </p>
                     </div>
                   </div>
                 </div>

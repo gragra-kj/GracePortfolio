@@ -1,32 +1,10 @@
 //import React from 'react'
 import projc1 from '../assets/projc1.jpeg'
+import { useState,useEffect } from 'react'
+import api from '../api/portfolioApi'
 
 const Projects = () => {
-    const projects=[
-        {
-            id:1,
-            image:projc1,
-            title:'Tracker',
-            desc:'JJNNJ',
-            tech:['React','Node.js','mysql'],
-        },
-        {
-            id:2,
-            image:projc1,
-            title:'Tracker',
-            desc:'JJNNJ',
-            tech:['React','Node.js','mysql'],
-        },
-        {
-            id:3,
-            image:projc1,
-            title:'Tracker',
-            desc:'JJNNJ',
-            tech:['React','Node.js','mysql'],
-        },
-        
-
-    ]
+    
   return (
     <section className='py-16 bg-gray-900' id='projects' >
         <div className='container mx-auto px-4 max-w-7xl'>
