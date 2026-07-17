@@ -1,49 +1,10 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-
-# Virtual Environment
 venv/
-env/
-.venv/
-
-# Django
+__pycache__/
+*.pyc
 db.sqlite3
-*.sqlite3
-
-# Environment variables
 .env
-
-# Static files
-staticfiles/
-
-# Media uploads
 media/
-
-# Logs
-*.log
-
-# VS Code
-.vscode/
-
-# PyCharm
-.idea/
-
-# macOS
-.DS_Store
-
-# Node
+staticfiles/
 node_modules/
-
-# Vite build
 dist/
-
-# npm logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Coverage
-coverage/
+.vscode/
